@@ -1,5 +1,6 @@
-using EfcoreApp.Models;
 using Microsoft.EntityFrameworkCore;
+using EfcoreApp.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,13 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    var config = builder.Configuration;
-    var connectionstring = config.GetConnectionString("database");
-    options.UseSqlServer(connectionstring);
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("database"));
 
 });
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
