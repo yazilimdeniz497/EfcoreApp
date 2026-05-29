@@ -1,0 +1,18 @@
+﻿@model List<Ogrenci>
+@foreach(var ogrenci in Model)
+{
+    <div class="card">
+        <div class="row">
+            <div class="col-12 col-md-6">
+          
+            <img src="~/img/@ogrenci.ImageFıle"  class="card-img-top"/>
+        </div>
+        <div class="col-12 col-md-6">
+            <h2 class="card-title">AdSoyad:@ogrenci.Ogrenciad @ogrenci.OgrenciSoyad</h2>
+            <p class="card-text">Telefon:@ogrenci.Telephone</p>
+            <p class="card-text">Email:@ogrenci.Email</p>
+
+        </div>
+        </div>
+    </div>
+}

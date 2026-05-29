@@ -1,5 +1,5 @@
 ﻿ @model Ogrenci
- <form asp-controller="Ogrenci" asp-action="CreateOgrenci" method="post">
+ <form asp-controller="Ogrenci" asp-action="CreateOgrenci" method="post" enctype="multipart/form-data">
      <div class="mb-3">
          <label asp-for="Ogrenciad">Ogrenci adi</label>
          <input class="form-control" type="text" asp-for="Ogrenciad" />
@@ -20,7 +20,7 @@
             <label asp-for="Email">Email</label>
             <input class="form-control" type="email" asp-for="Email" />
         </div>
-        <button class="btn btn-primary">Ögrenci Ekle</button>
+        <button type="submit" class="btn btn-primary">Ögrenci Ekle</button>
 
      </div>
  </form>

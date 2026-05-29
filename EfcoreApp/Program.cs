@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using EfcoreApp.Models;
 
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder( args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -13,7 +13,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 var app = builder.Build();
 
-
+app.UseStaticFiles();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -27,7 +27,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Ogrenci}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
